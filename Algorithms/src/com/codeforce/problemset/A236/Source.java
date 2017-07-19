@@ -7,6 +7,8 @@ public final class Source {
 		Scanner scan = new Scanner(System.in);
 		String name = scan.next();
 		int[] freq = new int[26];
-		
+		for (int i = 0; i < name.length(); i++) {
+			
+		}
 	}
 }
