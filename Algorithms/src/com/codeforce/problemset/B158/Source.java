@@ -2,37 +2,67 @@ package com.codeforce.problemset.B158;
 
 import java.util.Scanner;
 
-public class Source {
+public final class Source {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-
 		int n = scan.nextInt();
-		int[] s = getCustomers(n, scan);
-		int c = getTaxis(s);
+		int[] g = getGroups(scan, n);
+		int res = g[3];
+		g[3] = 0;
+		res = getTaxis(g, res);
 
-		System.out.println(c);
+		System.out.println(res);
 	}
 
-	private static int getTaxis(int[] s) {
-		int t = s[3];
-		int s1, s2, s3;
-		s1 = s[0] - s[2];
-		if (s1 <= 0) {
-			s2 = 0;
-		}
-		s2 = s[0] <= 0 ? 0 : Math.abs(s[0] - s[2]);
+	private static int getTaxis(int[] g, int res) {
+		int temp = g[0] - g[2];
 
-		for (int i = 0; i < s.length; i++) {
+		if (temp > 0) {
+			res += g[2];
+			g[2] = 0;
+			g[0] = Math.abs(temp);
+		} else if (temp == 0) {
+			res += g[0];
+			g[2] = g[0] = 0;
+		} else {
+			res += g[0];
+			g[0] = 0;
+			g[2] = Math.abs(temp);
 		}
+		res += g[2];
+		g[2] = 0;
 
-		return t;
+		temp = g[1] / 2;
+		res += temp;
+		g[1] = g[1] % 2;
+
+		temp = g[1] - 1;
+		if (temp >= 0) {
+			if (g[0] - 2 >= 0) {
+				res += g[1];
+				g[1] = 0;
+				g[0] -= 2;
+			} else if (g[0] - 1 >= 0) {
+				res += g[1];
+				g[1] = 0;
+				g[0] -= 1;
+			} else {
+				res += g[1];
+				g[1] = 0;
+			}
+		}
+		res += g[0] / 4;
+		if (g[0] % 4 != 0) {
+			res++;
+		}
+		return res;
 	}
 
-	private static int[] getCustomers(int n, Scanner scan) {
-		int[] s = { 0, 0, 0, 0 };
+	private static int[] getGroups(Scanner scan, int n) {
+		int[] g = { 0, 0, 0, 0 };
 		for (int i = 0; i < n; i++) {
-			s[scan.nextInt() - 1]++;
+			g[scan.nextInt() - 1]++;
 		}
-		return s;
+		return g;
 	}
 }
