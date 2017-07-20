@@ -10,8 +10,35 @@ public final class Source {
 		int b = scan.nextInt();
 		int c = scan.nextInt();
 
-		int res = 0;
+		int res = findMax(a, b, c);
+		
+		System.out.println(res);
+	}
 
-		int[] op = { 0, 0, 0, 1, 1, 0, 1, 1 };
+	private static int findMax(int a, int b, int c) {
+		int res = 0;
+		int temp;
+		
+		temp = a + b + c;
+		res = max(res, temp);
+		temp = a * (b + c);
+		res = max(res, temp);
+		temp = a * b + c;
+		res = max(res, temp);
+		temp = (a + b) * c;
+		res = max(res, temp);
+		temp = a + b * c;
+		res = max(res, temp);
+		temp = a * b * c;
+		res = max(res, temp);
+
+		return res;
+	}
+
+	private static int max(int res, int temp) {
+		if (temp > res) {
+			res = temp;
+		}
+		return res;
 	}
 }
