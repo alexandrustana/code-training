@@ -5,15 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public final class Source {
-	class Team {
-		int home;
-		int away;
-
-		public Team(int home, int away) {
-			this.home = home;
-			this.away = away;
-		}
-	}
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -41,3 +32,15 @@ public final class Source {
 	}
 
 }
+
+class Team {
+	int home;
+	int away;
+
+	public Team(int home, int away) {
+		this.home = home;
+		this.away = away;
+	}
+}
+
+
