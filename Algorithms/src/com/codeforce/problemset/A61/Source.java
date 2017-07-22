@@ -1,7 +1,6 @@
 package com.codeforce.problemset.A61;
 
 import java.util.Scanner;
-
 public class Source {
 
 	public static void main(String[] args) {
