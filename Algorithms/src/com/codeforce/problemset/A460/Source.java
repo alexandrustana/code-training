@@ -10,7 +10,8 @@ public class Source {
 		int n = scan.nextInt();
 		int m = scan.nextInt();
 
-		System.out.println(n +  (n  - 1) / (m - 1));
+		System.out.println(n +  (n  - 1
+				) / (m - 1));
 	}
 
 }
