@@ -13,8 +13,8 @@ public class Source {
 		List<String> users = new ArrayList<>();
 		String temp = "";
 		
-		for(int i = 0 ; i <= n ; i++) {
-			temp = scan.nextLine();
+		for(int i = 0 ; i < n ; i++) {
+			temp = scan.next();
 			if(!users.contains(temp)) {
 				users.add(temp);
 				System.out.println("OK");
