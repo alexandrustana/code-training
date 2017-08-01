@@ -1,4 +1,4 @@
-package com.algorithms.hash;
+package com.algorithms.datastructure.hash;
 
 import java.util.LinkedList;
 import java.util.List;

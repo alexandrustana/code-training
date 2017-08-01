@@ -1,4 +1,4 @@
-package com.algorithms.heap;
+package com.algorithms.datastructure.heap;
 
 import java.util.Arrays;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.algorithms.tries;
+package com.algorithms.datastructure.tries;
 
 import java.util.ArrayList;
 import java.util.List;
