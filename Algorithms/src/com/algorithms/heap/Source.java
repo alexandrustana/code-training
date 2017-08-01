@@ -15,15 +15,75 @@ public class Source {
 		for (int i = 0; i < 10; i++) {
 			System.out.println(heap.poll());
 		}
-//
-//		heap.add(10);
-//		heap.add(15);
-//		heap.add(20);
-//		heap.add(17);
-//		heap.add(25);
-//
-//		System.out.println(heap.poll());
-//		System.out.println(heap.poll());
+
+		heap.add(10);
+		heap.add(15);
+		heap.add(20);
+		heap.add(17);
+		heap.add(25);
+
+		System.out.println(heap.poll());
+		System.out.println(heap.poll());
+
+		int[] a = { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
+		for (int i = a.length / 2; i >= 0; i--) {
+			maxHeapify(a, i);
+		}
+
+		for (int i = 0; i < a.length; i++) {
+			System.out.println(a[i]);
+		}
+
+	}
+
+	public static void minHeapify(int[] A, int i) {
+		int l = left(i);
+		int r = right(i);
+		int smallest = 0;
+
+		if (l < A.length && A[l] < A[i]) {
+			smallest = l;
+		} else {
+			smallest = i;
+		}
+		if (r < A.length && A[r] < A[smallest]) {
+			smallest = r;
+		}
+		if (smallest != i) {
+			int temp = A[i];
+			A[i] = A[smallest];
+			A[smallest] = temp;
+			minHeapify(A, smallest);
+		}
+	}
+
+	public static void maxHeapify(int[] A, int i) {
+		int l = left(i);
+		int r = right(i);
+		int largest = 0;
+
+		if (l < A.length && A[l] > A[i]) {
+			largest = l;
+		} else {
+			largest = i;
+		}
+		if (r < A.length && A[r] > A[largest]) {
+			largest = r;
+		}
+		if (largest != i) {
+			int temp = A[i];
+			A[i] = A[largest];
+			A[largest] = temp;
+			maxHeapify(A, largest);
+		}
+	}
+
+	private static int left(int i) {
+		return 2 * i + 1;
+	}
+
+	private static int right(int i) {
+		return 2 * i + 2;
 	}
 }
 
