@@ -49,8 +49,7 @@ public class Source {
 	private static int findMax(int[] a, int d) {
 		int max = 0;
 		for (int i = 0; i < a.length; i++) {
-			int temp = (int) (a[i] % Math.pow(10, d));
-			temp = (int) (temp / Math.pow(10, d - 1));
+			int temp = getDigit(a[i],d);
 			if (temp > max) {
 				max = temp;
 			}
