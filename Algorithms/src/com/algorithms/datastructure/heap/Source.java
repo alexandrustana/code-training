@@ -8,13 +8,13 @@ public class Source {
 		MinHeap heap = new MinHeap();
 		Random random = new Random();
 
-		for (int i = 0; i < 10; i++) {
-			heap.add(random.nextInt());
-		}
-
-		for (int i = 0; i < 10; i++) {
-			System.out.println(heap.poll());
-		}
+//		for (int i = 0; i < 10; i++) {
+//			heap.add(random.nextInt());
+//		}
+//
+//		for (int i = 0; i < 10; i++) {
+//			System.out.println(heap.poll());
+//		}
 
 		heap.add(10);
 		heap.add(15);
@@ -24,15 +24,17 @@ public class Source {
 
 		System.out.println(heap.poll());
 		System.out.println(heap.poll());
+		System.out.println(heap.poll());
+		System.out.println(heap.poll());
 
-		int[] a = { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
-		for (int i = a.length / 2; i >= 0; i--) {
-			maxHeapify(a, i);
-		}
-
-		for (int i = 0; i < a.length; i++) {
-			System.out.println(a[i]);
-		}
+//		int[] a = { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
+//		for (int i = a.length / 2; i >= 0; i--) {
+//			maxHeapify(a, i);
+//		}
+//
+//		for (int i = 0; i < a.length; i++) {
+//			System.out.println(a[i]);
+//		}
 
 	}
 
